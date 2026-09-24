@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MovieTube</title>
+  <meta name="description" content="Stream thousands of public-domain classic films for free. No ads, no account.">
+  <meta name="theme-color" content="#0b0b0f">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='14' fill='%23e5484d'/><path d='M13 10l9 6-9 6z' fill='white'/></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header class="nav" id="nav">
+    <a class="logo" href="#/">Movie<span>Tube</span></a>
+    <nav class="links">
+      <a href="#/">Home</a>
+      <a href="#/new" id="newLink" hidden>New &amp; Popular</a>
+      <a href="#/genres">Genres</a>
+      <a href="#/list">My List</a>
+    </nav>
+    <form class="search" id="searchForm" role="search">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+      <input id="searchInput" type="search" placeholder="Titles, people, genres" autocomplete="off" aria-label="Search">
+    </form>
+  </header>
+
+  <main id="view"></main>
+
+  <div class="modal" id="modal" hidden>
+    <div class="modal-backdrop" data-close></div>
+    <article class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="icon-btn modal-close" data-close aria-label="Close">&times;</button>
+      <div id="modalBody"></div>
+    </article>
+  </div>
+
+  <footer class="footer">
+    <p>All films are streamed from the <a href="https://archive.org/details/feature_films" target="_blank" rel="noopener">Internet Archive</a>
+      and are believed to be in the public domain. Metadata may come from <a href="https://www.themoviedb.org" target="_blank" rel="noopener">TMDB</a>
+      (this product uses the TMDB API but is not endorsed or certified by TMDB).
+      Streaming availability in “New &amp; Popular” is provided by <a href="https://www.justwatch.com" target="_blank" rel="noopener">JustWatch</a>;
+      those titles are not hosted here — we link to the services that carry them.</p>
+    <p id="stats"></p>
+  </footer>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
